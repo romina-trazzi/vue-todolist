@@ -1,0 +1,36 @@
+/* codice CSS to-do list con Vue */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: deepskyblue;
+}
+
+.d_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img {
+    height: 50px;
+
+}
+
+button {
+    padding: 10px;
+}
+
+input, button {
+    border-radius: 10px;
+}
+
+p {
+    background-color: lightgrey;
+}
