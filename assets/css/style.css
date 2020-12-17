@@ -8,6 +8,8 @@
 
 body {
     background-color: deepskyblue;
+    font-family: "Josefin Sans", "sans-serif";
+    font-size: 18px;
 }
 
 .d_flex {
@@ -23,17 +25,21 @@ img {
 
 }
 
-input, button {
-    border-radius: 10px;
+input {
+   
+    padding: 10px;
+    width: 250px;
 }
 
 button {
-    padding: 15px;
-    margin-left: 10px;
+    border: 0;
+    padding: 8px 15px;
+    margin: 20px 0 20px 0;
+    font-family: "Josefin Sans", "sans-serif";
+    font-size: 18px;
 }   
 
 h2 {
-    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -47,4 +53,13 @@ ul {
 
 .fas:hover {
     cursor: pointer;
+}
+
+.nothing {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+input, .nothing, button {
+    border-radius: 10px;
 }

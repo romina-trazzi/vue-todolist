@@ -14,20 +14,25 @@ let root = new Vue ({
     el: "#root",
     data: {
         nuovoTask: "",
-        listaTask: ["Studiare JS", "Vedere Vue"],
+        listaTask: [],
         immagine: "https://www.boolean.careers/images/misc/logo.png",
+        errore: false
     },
 
     methods: {
         addElement() {
             if (this.nuovoTask.length >= 4) {
-                this.listaTask.push(this.nuovoTask)
-                this.nuovoTask = ""
+                this.listaTask.push(this.nuovoTask);
+                this.nuovoTask = "";
+                this.errore = false;
+            } else {
+                this.errore = true; 
             }
+            
         },
 
         deleteElement(index) {
-                this.listaTask.splice(index, 1)
+                this.listaTask.splice(index, 1);
         } 
     }
 

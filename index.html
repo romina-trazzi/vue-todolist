@@ -4,14 +4,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- meta properties -->
         <meta name="author" content="Romina Trazzi">
         <meta name="description" content="Esercizio to do list con Vue">
         <meta name="keywords" content="javascript, vue, to-do list">
         <!-- / meta properties -->
-
+        
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
         <!-- fogli di stile -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />  
         <link rel="stylesheet" href="assets/css/style.css" media="screen">
         <!-- / fogli di stile -->
 
@@ -23,14 +26,15 @@
             <div class = "d_flex">
                 <img v-bind:src = "immagine">
                 <div>
-                    <input type="text" v-model="nuovoTask" minlength="4" placeholder ="Insert your task here" required>
+                    <input type="text" v-model="nuovoTask" minlength="4" placeholder ="Insert your task here" v-on:keyup.enter="addElement" required>
                     <button v-on:click="addElement">Add</button>
+                    <p v-if ="errore">Inserisci almeno 4 caratteri</p>
                     <h2>Todo List</h2>
                     <p>
                         <ul v-if="listaTask.length > 0">
-                            <li v-for="(task, index) in listaTask"> {{ task }} <i class="fas fa-times" v-on:click="deleteElement"></i></li>
+                            <li v-for="(task, index) in listaTask"> {{ task }} <i class="fas fa-times-circle" v-on:click="deleteElement(index)"></i></li>
                         </ul>
-                        <p v-else style = "background-color: lightblue;"> Nothing to do!</p>
+                        <p v-else class="nothing"> Nothing to do!</p>
                     </p>
                 </div>
 
