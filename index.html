@@ -11,7 +11,7 @@
         <!-- / meta properties -->
 
         <!-- fogli di stile -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
         <link rel="stylesheet" href="assets/css/style.css" media="screen">
         <!-- / fogli di stile -->
 
@@ -19,21 +19,16 @@
     </head>
 
     <body>
-
-        <div class ="container">
-            <div class = "d_flex" id = "root">
-                <img src ="https://www.boolean.careers/images/misc/logo.png">
+        <div class ="container" id = "root">
+            <div class = "d_flex">
+                <img v-bind:src = "immagine">
                 <div>
-                    <input type="text" name="todo" id="todo">
-                    <button type="submit">Add</button>
+                    <input type="text" v-model="nuovoTask">
+                    <button v-on:click="addElement">Add</button>
                     <h2>Todo List</h2>
-                </div>
-                <div>
                     <p>
                         <ul>
-                            <li>
-                                <i class="far fa-times-octagon"></i>
-                            </li>
+                            <li v-for="task in listaTask"> {{ task }} <i class="fas fa-times"></i></li>
                         </ul>
                     </p>
                 </div>
@@ -44,5 +39,6 @@
         <!-- JS + Vue development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="assets/js/main.js" type ="text/javascript"></script>
+        <!-- / JS + Vue development version, includes helpful console warnings -->
     </body>
 </html>

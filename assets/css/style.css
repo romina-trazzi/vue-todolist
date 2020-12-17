@@ -31,6 +31,15 @@ input, button {
     border-radius: 10px;
 }
 
-p {
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li {
     background-color: lightgrey;
+}
+
+ul {
+    list-style-type: none;
 }
