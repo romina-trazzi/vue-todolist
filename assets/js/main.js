@@ -15,7 +15,7 @@ let root = new Vue ({
     data: {
         nuovoTask: "",
         listaTask: ["Studiare JS", "Vedere Vue"],
-        immagine: "https://www.boolean.careers/images/misc/logo.png"
+        immagine: "https://www.boolean.careers/images/misc/logo.png",
     },
 
     methods: {
@@ -27,13 +27,9 @@ let root = new Vue ({
         },
 
         deleteElement(index) {
-            if (this.listaTask.length == 0) {
-                alert("Nulla da fare")
-            } else {
                 this.listaTask.splice(index, 1)
-            }
-        }
-    } 
+        } 
+    }
 
 
 }); 

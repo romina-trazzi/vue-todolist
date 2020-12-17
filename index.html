@@ -27,9 +27,10 @@
                     <button v-on:click="addElement">Add</button>
                     <h2>Todo List</h2>
                     <p>
-                        <ul>
+                        <ul v-if="listaTask.length > 0">
                             <li v-for="(task, index) in listaTask"> {{ task }} <i class="fas fa-times" v-on:click="deleteElement"></i></li>
                         </ul>
+                        <p v-else style = "background-color: lightblue;"> Nothing to do!</p>
                     </p>
                 </div>
 
