@@ -23,7 +23,7 @@
             <div class = "d_flex">
                 <img v-bind:src = "immagine">
                 <div>
-                    <input type="text" v-model="nuovoTask">
+                    <input type="text" v-model="nuovoTask" minlength="4" placeholder ="Insert your task here" required>
                     <button v-on:click="addElement">Add</button>
                     <h2>Todo List</h2>
                     <p>

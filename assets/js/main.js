@@ -20,12 +20,18 @@ let root = new Vue ({
 
     methods: {
         addElement() {
-            this.listaTask.push(this.nuovoTask)
-            this.nuovoTask = ""
+            if (this.nuovoTask.length >= 4) {
+                this.listaTask.push(this.nuovoTask)
+                this.nuovoTask = ""
+            }
         },
 
         deleteElement(index) {
-            this.listaTask.splice(index, 1)
+            if (this.listaTask.length == 0) {
+                alert("Nulla da fare")
+            } else {
+                this.listaTask.splice(index, 1)
+            }
         }
     } 
 
