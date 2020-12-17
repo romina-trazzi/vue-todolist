@@ -24,8 +24,8 @@ let root = new Vue ({
             this.nuovoTask = ""
         },
 
-        deleteElement() {
-            
+        deleteElement(index) {
+            this.listaTask.splice(index, 1)
         }
     } 
 

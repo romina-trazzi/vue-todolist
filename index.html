@@ -28,7 +28,7 @@
                     <h2>Todo List</h2>
                     <p>
                         <ul>
-                            <li v-for="task in listaTask"> {{ task }} <i class="fas fa-times"></i></li>
+                            <li v-for="(task, index) in listaTask"> {{ task }} <i class="fas fa-times" v-on:click="deleteElement"></i></li>
                         </ul>
                     </p>
                 </div>
